@@ -2,9 +2,9 @@
 
 - [create-react-component](#create-react-component)
   - [Introduction](#introduction)
-  - [Usage ✋](#usage)
-  - [Installation 💻](#installation)
-  - [TL;DR 🤦‍](#tl-dr)
+  - [Usage](#usage)
+  - [Installation](#installation)
+  - [TL;DR](#tl-dr)
   - [Generated Files](#generated-files)
     - [index.js](#indexjs)
     - [MyComponent.js](#mycomponentjs)
@@ -29,13 +29,13 @@ A simple bash script that generates a React Component Folder in the format I per
 
 See descriptions of all files [below](#generated-files).
 
-## Usage ✋
+## Usage
 
 ```bash
 create-react-component.sh ComponentName
 ```
 
-## Installation 💻
+## Installation
 
 This is a plain simple bash script. You can add it to your path by adding this line to your .`profile` file:
 
@@ -53,7 +53,11 @@ You can create an alias like **crc** to make this easier:
 alias crc=create-react-component.sh
 ```
 
-## TL;DR 🤦‍
+> 💡 **Tip:** You can add this to your `.profile` file to have this alias forever.
+
+> Don't forget to add excecutable permissions to the script: `chmod +x create-react-component.sh`
+
+## TL;DR
 
 Just paste this in your terminal :
 
@@ -61,9 +65,7 @@ Just paste this in your terminal :
 curl https://raw.githubusercontent.com/ggomez91/create-react-component/master/create-react-component.sh --output ~/bin/create-react-component.sh && echo -e 'export PATH="${PATH}:~/bin"\nalias crc=create-react-component.sh' >> ~/.profile && source ~/.profile && echo "Done you lazy person..."
 ```
 
-> 💡 **Tip:** You can add this to your `.profile` file to have this alias forever.
-
-> Don't forget to add excecutable permissions to the script: `chmod +x create-react-component.sh`
+There, use `crc MyComponent` 🤦‍
 
 ## Generated Files
 
