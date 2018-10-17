@@ -4,7 +4,7 @@
   - [Introduction](#introduction)
   - [Usage](#usage)
   - [Installation](#installation)
-  - [TL;DR](#tl-dr)
+  - [TL;DR](#tl;dr)
   - [Generated Files](#generated-files)
     - [index.js](#indexjs)
     - [MyComponent.js](#mycomponentjs)
@@ -45,7 +45,7 @@ export PATH="${PATH}:~/bin"
 
 and placing the script in your `~/bin` folder.
 
-> 💡 **Tip:** If you use **VSCode** you can right-click on the fo;der you want the new component and open a terminal there to use this script.
+> 💡 **Tip:** If you use **VSCode** you can right-click on the folder you want the new component and open a terminal there to use this script.
 
 You can create an alias like **crc** to make this easier:
 
@@ -62,7 +62,7 @@ alias crc=create-react-component.sh
 Just paste this in your terminal :
 
 ```sh
-curl https://raw.githubusercontent.com/ggomez91/create-react-component/master/create-react-component.sh --output ~/bin/create-react-component.sh && echo -e 'export PATH="${PATH}:~/bin"\nalias crc=create-react-component.sh' >> ~/.profile && source ~/.profile && echo "Done you lazy person..."
+mkdir -p ~/bin && curl https://raw.githubusercontent.com/ggomez91/create-react-component/master/create-react-component.sh --output ~/bin/create-react-component.sh && echo -e 'export PATH="${PATH}:~/bin"\nalias crc=create-react-component.sh' >> ~/.profile && source ~/.profile && echo "Done you lazy person..."
 ```
 
 There, use `crc MyComponent` 🤦‍
