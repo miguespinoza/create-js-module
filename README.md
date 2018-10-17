@@ -1,5 +1,21 @@
 # create-react-component
 
+- [create-react-component](#create-react-component)
+  - [Introduction](#introduction)
+  - [Usage ✋](#usage)
+  - [Installation 💻](#installation)
+  - [TL;DR 🤦‍](#tl-dr)
+  - [Generated Files](#generated-files)
+    - [index.js](#indexjs)
+    - [MyComponent.js](#mycomponentjs)
+    - [MyComponent.spec.js](#mycomponentspecjs)
+    - [MyComponent.style.module.scss](#mycomponentstylemodulescss)
+    - [README.md](#readmemd)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+## Introduction
+
 A simple bash script that generates a React Component Folder in the format I personally like:
 
 `create-react-component MyComponent` will generate:
