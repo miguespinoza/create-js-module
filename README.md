@@ -59,7 +59,7 @@ alias crc=create-react-component.sh
 
 ## TL;DR
 
-Just paste this in your terminal :
+Just paste this in your terminal:
 
 ```sh
 mkdir -p ~/bin && curl https://raw.githubusercontent.com/ggomez91/create-react-component/master/create-react-component.sh --output ~/bin/create-react-component.sh && echo -e 'export PATH="${PATH}:~/bin"\nalias crc=create-react-component.sh' >> ~/.profile && source ~/.profile && echo "Done you lazy person..."
