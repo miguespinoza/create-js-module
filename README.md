@@ -1,15 +1,15 @@
-# create-react-component
+# create-js-module
 
-- [create-react-component](#create-react-component)
+- [create-js-module](#create-js-module)
   - [Introduction](#introduction)
   - [Usage](#usage)
   - [Installation](#installation)
   - [TL;DR](#tl;dr)
   - [Generated Files](#generated-files)
     - [index.js](#indexjs)
-    - [MyComponent.js](#mycomponentjs)
-    - [MyComponent.spec.js](#mycomponentspecjs)
-    - [MyComponent.style.module.scss](#mycomponentstylemodulescss)
+    - [MyModule.js](#MyModulejs)
+    - [MyModule.spec.js](#MyModulespecjs)
+    - [MyModule.style.module.scss](#MyModulestylemodulescss)
     - [README.md](#readmemd)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -18,13 +18,13 @@
 
 A simple bash script that generates a React Component Folder in the format I personally like:
 
-`create-react-component MyComponent` will generate:
+`create-js-module MyModule` will generate:
 
-- MyComponent/
+- MyModule/
   - [index.js](#index.js)
-  - [MyComponent.style.module.scss](#MyComponent.style.module.scss)
-  - [MyComponent.js](#MyComponent.js)
-  - [MyComponent.spec.js](#MyComponent.spec.js)
+  - [MyModule.style.module.scss](#MyModule.style.module.scss)
+  - [MyModule.js](#MyModule.js)
+  - [MyModule.spec.js](#MyModule.spec.js)
   - [README.md](#README.md)
 
 See descriptions of all files [below](#generated-files).
@@ -32,7 +32,7 @@ See descriptions of all files [below](#generated-files).
 ## Usage
 
 ```bash
-create-react-component.sh ComponentName
+create-js-module.sh ComponentName
 ```
 
 ## Installation
@@ -47,96 +47,55 @@ and placing the script in your `~/bin` folder.
 
 > 💡 **Tip:** If you use **VSCode** you can right-click on the folder you want the new component and open a terminal there to use this script.
 
-You can create an alias like **crc** to make this easier:
+You can create an alias like **cjsm** to make this easier:
 
 ```sh
-alias crc=create-react-component.sh
+alias cjsm=create-js-module.sh
 ```
 
 > 💡 **Tip:** You can add this to your `.profile` file to have this alias forever.
 
-> Don't forget to add excecutable permissions to the script: `chmod +x create-react-component.sh`
+> Don't forget to add excecutable permissions to the script: `chmod +x create-js-module.sh`
 
 ## TL;DR
 
 Just paste this in your terminal:
 
 ```sh
-mkdir -p ~/bin && curl https://raw.githubusercontent.com/ggomez91/create-react-component/master/create-react-component.sh --output ~/bin/create-react-component.sh && echo -e 'export PATH="${PATH}:~/bin"\nalias crc=create-react-component.sh' >> ~/.profile && source ~/.profile && echo "Done you lazy person..."
+mkdir -p ~/bin && curl https://raw.githubusercontent.com/miguespinoza/create-js-module/master/create-js-module.sh --output ~/bin/create-js-module.sh && echo -e 'export PATH="${PATH}:~/bin"\nalias cjsm=create-js-module.sh' >> ~/.profile && source ~/.profile && echo "Done you lazy person..."
 ```
 
-There, use `crc MyComponent` 🤦‍
+There, use `cjsm MyModule` 🤦‍
 
 ## Generated Files
 
 ### index.js
 
-A simple index that forwards the _default export_ from the Main Javascript File.
+A simple index that forwards all the exports from the Main Javascript File.
 
 ```js
-export { default } from "./MyComponent";
+export * from "./MyModule";
 ```
 
-### MyComponent.js
+### MyModule.js
 
-Main Component. Extends from _React.PureComponent_. Adds the named and default export and some placeholders for props.
+Main module. this is where you export your module functions
 
-```js
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
 
-import styles from "./MyComponent.style.module.scss";
+### MyModule.spec.js
 
-/**
- *
- */
-export class MyComponent extends PureComponent {
-  render() {
-    const {} = this.props;
-    return <div className={styles.MyComponent} />;
-  }
-}
-
-MyComponent.propTypes = {};
-
-export default MyComponent;
-```
-
-### MyComponent.spec.js
-
-A simple snapshot test with enzyme
+The place to put your tests
 
 ```js
-import React from "react";
-import { shallow } from "enzyme";
-import MyComponent from "./MyComponent";
-
-describe("<MyComponent />", () => {
-  const wrapper = shallow(<MyComponent />);
-
-  it("Matches snapshot", () => {
-    expect(wrapper).toMatchSnapshot();
+import * as MyModule from \"./MyModule\";
+describe(\"MyModule \", () => {
+  it(\"\", () => {
+    
   });
 });
 ```
 
-### MyComponent.style.module.scss
-
-A nice SASS module with a single empty class. I assume you want a `~styles/variables` import too. (Why wouldn't you?)
-
-```scss
-@import "~styles/variables";
-
-// Main label on the top
-.MyComponent {
-}
-```
-
 ### README.md
 
-Readme with the [React Styleguidist](https://react-styleguidist.js.org) format. I use it.
-example:
+Readme for the module documentation
 
-    ```js
-    <MyComponent />
-    ```
