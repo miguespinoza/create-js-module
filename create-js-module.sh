@@ -14,24 +14,25 @@ mkdir $NAME
 cd $NAME
 
 # Generate `index.js`
-echo "export * from \"./"$NAME"\";" > index.js
+echo "export * from \"./"$NAME"\";" > index.ts
 
 # Generate module
-echo "" > $NAME.js
+echo "
+
+export default function $NAME(){
+  
+}
+
+" > $NAME.ts
 
 
 # Generate tests
 
-echo "import * as $NAME from \"./$NAME\";
+echo "import $NAME from \"./$NAME\";
 describe(\"$NAME \", () => {
   it(\"\", () => {
     
   });
-});" >$NAME.spec.js
-
-# Generate docs
-
-echo "$NAME module:
-" > README.md 
+});" >$NAME.spec.ts
 
 echo "Module $NAME generated successfully!"
